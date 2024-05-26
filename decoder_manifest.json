@@ -1,0 +1,390 @@
+{
+    "networkInterfaces": [
+        {
+            "canInterface": {
+                "name": "vcan",
+                "protocolName": "CAN",
+                "protocolVersion": "2.0b"
+            },
+            "interfaceId": "vcan0",
+            "type": "CAN_INTERFACE"
+        }
+    ],
+    "signalDecoders": [
+        {
+            "fullyQualifiedName": "Vehicle.Battery.CurrentCurrent",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 306,
+                "isBigEndian": false,
+                "isSigned": true,
+                "startBit": 32,
+                "offset": 822.0,
+                "factor": -0.05,
+                "length": 16,
+                "name": "RawBattCurrent132"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Battery.CurrentVoltage",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 306,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 0,
+                "offset": 0.0,
+                "factor": 0.01,
+                "length": 16,
+                "name": "BattVoltage132"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Accelerator.PedalPosition",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 280,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 32,
+                "offset": 0.0,
+                "factor": 0.4,
+                "length": 8,
+                "name": "DI_accelPedalPos"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Pressure",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 8,
+                "offset": 0.0,
+                "factor": 0.025,
+                "length": 8,
+                "name": "VCSEC_TPMSPressure0"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Temperature",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 16,
+                "offset": -40.0,
+                "factor": 1.0,
+                "length": 8,
+                "name": "VCSEC_TPMSTemperature0"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Pressure",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 8,
+                "offset": 0.0,
+                "factor": 0.025,
+                "length": 8,
+                "name": "VCSEC_TPMSPressure1"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Temperature",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 16,
+                "offset": -40.0,
+                "factor": 1.0,
+                "length": 8,
+                "name": "VCSEC_TPMSTemperature1"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Pressure",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 8,
+                "offset": 0.0,
+                "factor": 0.025,
+                "length": 8,
+                "name": "VCSEC_TPMSPressure2"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Temperature",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 16,
+                "offset": -40.0,
+                "factor": 1.0,
+                "length": 8,
+                "name": "VCSEC_TPMSTemperature2"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Pressure",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 8,
+                "offset": 0.0,
+                "factor": 0.025,
+                "length": 8,
+                "name": "VCSEC_TPMSPressure3"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Temperature",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 537,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 16,
+                "offset": -40.0,
+                "factor": 1.0,
+                "length": 8,
+                "name": "VCSEC_TPMSTemperature3"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.Brake.PedalStatus",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 280,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 19,
+                "offset": 0.0,
+                "factor": 1.0,
+                "length": 2,
+                "name": "DI_brakePedalState"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.SteeringWheel.Angle",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 297,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 16,
+                "offset": -819.2,
+                "factor": 0.1,
+                "length": 14,
+                "name": "SteeringAngle129"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Chassis.SteeringWheel.Speed",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 297,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 32,
+                "offset": -4096.0,
+                "factor": 0.5,
+                "length": 14,
+                "name": "SteeringSpeed129"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.CurrentLocation.Accuracy",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 79,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 57,
+                "offset": 0.0,
+                "factor": 0.2,
+                "length": 7,
+                "name": "GPSAccuracy04F"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.CurrentLocation.Latitude",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 79,
+                "isBigEndian": false,
+                "isSigned": true,
+                "startBit": 0,
+                "offset": 0.0,
+                "factor": 1e-06,
+                "length": 28,
+                "name": "GPSLatitude04F"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.CurrentLocation.Longitude",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 79,
+                "isBigEndian": false,
+                "isSigned": true,
+                "startBit": 28,
+                "offset": 0.0,
+                "factor": 1e-06,
+                "length": 28,
+                "name": "GPSLongitude04F"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Powertrain.AccumulatedBrakingEnergy",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 1010,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 8,
+                "offset": 0.0,
+                "factor": 0.001,
+                "length": 32,
+                "name": "BMS_kwhDriveDischargeTotal"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Powertrain.EOP",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 917,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 40,
+                "offset": 0.0,
+                "factor": 2.0,
+                "length": 8,
+                "name": "DIR_oilPumpPressureEstimate"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Powertrain.EOPExpected",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 917,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 48,
+                "offset": 0.0,
+                "factor": 2.0,
+                "length": 8,
+                "name": "DIR_oilPumpPressureExpected"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Powertrain.Range",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 826,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 0,
+                "offset": 0.0,
+                "factor": 1.0,
+                "length": 10,
+                "name": "UI_Range"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 1010,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 8,
+                "offset": 0.0,
+                "factor": 0.001,
+                "length": 32,
+                "name": "BMS_kwhRegenChargeTotal"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 826,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 48,
+                "offset": 0.0,
+                "factor": 1.0,
+                "length": 7,
+                "name": "UI_SOC"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.Speed",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 599,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 12,
+                "offset": -40.0,
+                "factor": 0.08,
+                "length": 12,
+                "name": "DI_vehicleSpeed"
+            }
+        },
+        {
+            "fullyQualifiedName": "Vehicle.TraveledDistance",
+            "type": "CAN_SIGNAL",
+            "interfaceId": "vcan0",
+            "canSignal": {
+                "messageId": 950,
+                "isBigEndian": false,
+                "isSigned": false,
+                "startBit": 0,
+                "offset": 0.0,
+                "factor": 0.1,
+                "length": 24,
+                "name": "UI_odometer"
+            }
+        }
+    ]
+}

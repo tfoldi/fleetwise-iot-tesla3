@@ -36,24 +36,17 @@ BS_:
 BU_: Receiver ChassisBus VehicleBus PartyBus
 
 BO_ 297 ID129SteeringAngle: 8 VehicleBus
- SG_ SteeringWheelSpeed : 32|14@1+ (0.5,-4096) [-4096|4095.5] "D/S"  Receiver
- SG_ SteeringWheelAngle : 16|14@1+ (0.1,-819.2) [-819.2|819.1] "Deg"  Receiver
+ SG_ SteeringSpeed129 : 32|14@1+ (0.5,-4096) [-4096|4095.5] "D/S"  Receiver
+ SG_ SteeringAngle129 : 16|14@1+ (0.1,-819.2) [-819.2|819.1] "Deg"  Receiver
 
 BO_ 950 ID3B6odometer: 4 VehicleBus
- SG_ TraveledDistance : 0|32@1+ (0.001,0) [0|4294970] "KM"  Receiver
+ SG_ UI_odometer : 0|24@1+ (0.1,0) [0|1677720] "km"  Receiver
 
 BO_ 306 ID132HVBattAmpVolt: 8 VehicleBus
- SG_ ChargeHoursRemaining132 : 48|12@1+ (1,0) [0|4095] "Min"  Receiver
  SG_ BattVoltage132 : 0|16@1+ (0.01,0) [0|655.35] "V"  Receiver
  SG_ RawBattCurrent132 : 32|16@1- (-0.05,822) [-1138.35|2138.4] "A"  Receiver
- SG_ SmoothBattCurrent132 : 16|16@1- (-0.1,0) [-3276.7|3276.7] "A"  Receiver
 
 BO_ 599 ID257DIspeed: 8 VehicleBus
- SG_ DI_speedChecksum : 0|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DI_speedCounter : 8|4@1+ (1,0) [0|15] ""  Receiver
- SG_ DI_uiSpeed : 24|9@1+ (1,0) [0|510] ""  Receiver
- SG_ DI_uiSpeedHighSpeed : 34|9@1+ (1,0) [0|510] ""  Receiver
- SG_ DI_uiSpeedUnits : 33|1@1+ (1,0) [0|1] ""  Receiver
  SG_ DI_vehicleSpeed : 12|12@1+ (0.08,-40) [-40|285] "kph"  Receiver
 
 BO_ 79 ID04FGPSLatLong: 8 ChassisBus
@@ -61,63 +54,19 @@ BO_ 79 ID04FGPSLatLong: 8 ChassisBus
  SG_ GPSLongitude04F : 28|28@1- (1E-006,0) [-134.218|134.218] "Deg"  Receiver
  SG_ GPSLatitude04F : 0|28@1- (1E-006,0) [-134.218|134.218] "Deg"  Receiver
 
-
 BO_ 280 ID118DriveSystemStatus: 8 VehicleBus
  SG_ DI_accelPedalPos : 32|8@1+ (0.4,0) [0|100] "%"  Receiver
  SG_ DI_brakePedalState : 19|2@1+ (1,0) [0|2] ""  Receiver
- SG_ DI_driveBlocked : 12|2@1+ (1,0) [0|2] ""  Receiver
- SG_ DI_epbRequest : 44|2@1+ (1,0) [0|2] ""  Receiver
- SG_ DI_gear : 21|3@1+ (1,0) [0|7] ""  Receiver
- SG_ DI_immobilizerState : 27|3@1+ (1,0) [0|6] ""  Receiver
- SG_ DI_keepDrivePowerStateRequest : 47|1@1+ (1,0) [0|1] ""  Receiver
- SG_ DI_proximity : 46|1@1+ (1,0) [0|1] ""  Receiver
- SG_ DI_regenLight : 26|1@1+ (1,0) [0|1] ""  Receiver
- SG_ DI_systemState : 16|3@1+ (1,0) [0|5] ""  Receiver
- SG_ DI_systemStatusChecksum : 0|8@1+ (1,0) [0|255] ""  Receiver
- SG_ DI_systemStatusCounter : 8|4@1+ (1,0) [0|15] ""  Receiver
- SG_ DI_trackModeState : 48|2@1+ (1,0) [0|2] ""  Receiver
- SG_ DI_tractionControlMode : 40|3@1+ (1,0) [0|6] ""  Receiver
 
 BO_ 826 ID33AUI_rangeSOC: 8 VehicleBus
- SG_ UI_idealRange : 16|10@1+ (1,0) [0|1023] "mi"  Receiver
  SG_ UI_Range : 0|10@1+ (1,0) [0|1023] "mi"  Receiver
  SG_ UI_SOC : 48|7@1+ (1,0) [0|127] "%"  Receiver
- SG_ UI_uSOE : 56|7@1+ (1,0) [0|127] "%"  Receiver
- SG_ UI_ratedWHpM : 32|10@1+ (1,0) [0|1023] "WHpM"  Receiver
 
 BO_ 1010 ID3F2BMSCounters: 8 VehicleBus
- SG_ BMS_kwhCounter_Id M : 0|4@1+ (1,0) [0|0] ""  Receiver
- SG_ BMS_kwhDcChargeTotalModule3 m9 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhChargeTotalModule2 m6 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDcChargeTotalModule2 m7 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhChargeTotalModule4 m10 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDcChargeTotalModule4 m11 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDcChargeTotalModule1 m5 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhChargeTotalModule1 m4 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhChargeTotalModule3 m8 : 36|28@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhAcChargeTotalModule3 m9 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDischargeTotalModule2 m6 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhAcChargeTotalModule2 m7 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDischargeTotalModule4 m10 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhAcChargeTotalModule4 m11 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhAcChargeTotalModule1 m5 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDriveDischargeTotal m3 : 8|32@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_dcChargerKwhTotal m1 : 8|32@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDischargeTotalModule1 m4 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_acChargerKwhTotal m0 : 8|32@1+ (0.001,0) [0|0] "KWh"  Receiver
  SG_ BMS_kwhRegenChargeTotal m2 : 8|32@1+ (0.001,0) [0|0] "KWh"  Receiver
- SG_ BMS_kwhDischargeTotalModule3 m8 : 8|28@1- (0.001,0) [0|0] "KWh"  Receiver
+ SG_ BMS_kwhDriveDischargeTotal m3 : 8|32@1+ (0.001,0) [0|0] "KWh"  Receiver
 
 BO_ 537 ID219VCSEC_TPMSData: 5 ChassisBus
- SG_ VCSEC_TPMSDataIndex M : 0|2@1+ (1,0) [0|3] ""  Receiver
- SG_ VCSEC_TPMSBatVoltage0 m0 : 24|8@1+ (0.01,1.5) [1.5|4.04] "V"  Receiver
- SG_ VCSEC_TPMSBatVoltage1 m1 : 24|8@1+ (0.01,1.5) [1.5|4.04] "V"  Receiver
- SG_ VCSEC_TPMSBatVoltage2 m2 : 24|8@1+ (0.01,1.5) [1.5|4.04] "V"  Receiver
- SG_ VCSEC_TPMSBatVoltage3 m3 : 24|8@1+ (0.01,1.5) [1.5|4.04] "V"  Receiver
- SG_ VCSEC_TPMSLocation0 m0 : 32|3@1+ (1,0) [0|4] ""  Receiver
- SG_ VCSEC_TPMSLocation1 m1 : 32|3@1+ (1,0) [0|4] ""  Receiver
- SG_ VCSEC_TPMSLocation2 m2 : 32|3@1+ (1,0) [0|4] ""  Receiver
- SG_ VCSEC_TPMSLocation3 m3 : 32|3@1+ (1,0) [0|4] ""  Receiver
  SG_ VCSEC_TPMSPressure0 m0 : 8|8@1+ (0.025,0) [0|6.35] "bar"  Receiver
  SG_ VCSEC_TPMSPressure1 m1 : 8|8@1+ (0.025,0) [0|6.35] "bar"  Receiver
  SG_ VCSEC_TPMSPressure2 m2 : 8|8@1+ (0.025,0) [0|6.35] "bar"  Receiver
@@ -129,16 +78,8 @@ BO_ 537 ID219VCSEC_TPMSData: 5 ChassisBus
 
 
 BO_ 917 ID395DIR_oilPump: 8 VehicleBus
- SG_ DIR_oilPumpFlowActual : 16|8@1+ (0.06,0) [0|15] "LPM"  Receiver
- SG_ DIR_oilPumpFlowTarget : 8|8@1+ (0.06,0) [0|15] "LPM"  Receiver
- SG_ DIR_oilPumpFluidT : 24|8@1+ (1,-40) [-40|214] "C"  Receiver
- SG_ DIR_oilPumpFluidTQF : 3|1@1+ (1,0) [0|1] ""  Receiver
- SG_ DIR_oilPumpLeadAngle : 4|4@1+ (1.875,0) [0|28.125] "deg"  Receiver
- SG_ DIR_oilPumpPhaseCurrent : 32|8@1+ (0.1,0) [0|25.4] "A"  Receiver
  SG_ DIR_oilPumpPressureEstimate : 40|8@1+ (2,0) [0|500] "kPa"  Receiver
  SG_ DIR_oilPumpPressureExpected : 48|8@1+ (2,0) [0|500] "kPa"  Receiver
- SG_ DIR_oilPumpPressureResidual : 56|8@1+ (4,-500) [-500|500] "kPa"  Receiver
- SG_ DIR_oilPumpState : 0|3@1+ (1,0) [0|7] ""  Receiver
 
 
 CM_ SG_ 130 UI_tripPlanningActive "Navigation Active";

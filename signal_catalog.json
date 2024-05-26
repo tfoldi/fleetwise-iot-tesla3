@@ -1,0 +1,347 @@
+{
+    "name": "sigs_tesla3",
+    "nodesToAdd": [
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis"
+            }
+        },
+
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Powertrain"
+            }
+        },
+
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Battery"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery.StateOfCharge"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.SteeringWheel"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Brake"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Accelerator"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.CurrentLocation"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Left"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Right"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Left"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Right"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire"
+            }
+        },
+        {
+            "branch": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire"
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy",
+                "dataType": "FLOAT",
+                "unit": "KWh",
+                "min": 0.0,
+                "max": 0.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Powertrain.AccumulatedBrakingEnergy",
+                "dataType": "FLOAT",
+                "unit": "KWh",
+                "min": 0.0,
+                "max": 0.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Battery.CurrentVoltage",
+                "dataType": "DOUBLE",
+                "unit": "V",
+                "min": 0.0,
+                "max": 655.35
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Battery.CurrentCurrent",
+                "dataType": "DOUBLE",
+                "unit": "A",
+                "min": -1138.35,
+                "max": 2138.4
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Powertrain.Range",
+                "dataType": "DOUBLE",
+                "unit": "mi",
+                "min": 0.0,
+                "max": 1023.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed",
+                "dataType": "UINT8",
+                "unit": "%",
+                "min": 0.0,
+                "max": 127.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.SteeringWheel.Angle",
+                "dataType": "DOUBLE",
+                "unit": "Deg",
+                "min": -819.2,
+                "max": 819.1
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.SteeringWheel.Speed",
+                "dataType": "DOUBLE",
+                "unit": "D/S",
+                "min": -4096.0,
+                "max": 4095.5
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Accelerator.PedalPosition",
+                "dataType": "FLOAT",
+                "unit": "%",
+                "min": 0.0,
+                "max": 100.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Brake.PedalStatus",
+                "dataType": "BOOLEAN",
+                "unit": "",
+                "min": 0.0,
+                "max": 2.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Powertrain.EOP",
+                "dataType": "DOUBLE",
+                "unit": "kPa",
+                "min": 0.0,
+                "max": 500.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Powertrain.EOPExpected",
+                "dataType": "DOUBLE",
+                "unit": "kPa",
+                "min": 0.0,
+                "max": 500.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Speed",
+                "dataType": "DOUBLE",
+                "unit": "kph",
+                "min": -40.0,
+                "max": 285.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.TraveledDistance",
+                "dataType": "FLOAT",
+                "unit": "KM",
+                "min": 0.0,
+                "max": 4294970.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.CurrentLocation.Accuracy",
+                "dataType": "FLOAT",
+                "unit": "m",
+                "min": 0.0,
+                "max": 25.2
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.CurrentLocation.Latitude",
+                "dataType": "DOUBLE",
+                "unit": "Deg",
+                "min": -134.218,
+                "max": 134.218
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.CurrentLocation.Longitude",
+                "dataType": "DOUBLE",
+                "unit": "Deg",
+                "min": -134.218,
+                "max": 134.218
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Pressure",
+                "dataType": "FLOAT",
+                "unit": "bar",
+                "min": 0.0,
+                "max": 6.35
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Pressure",
+                "dataType": "FLOAT",
+                "unit": "bar",
+                "min": 0.0,
+                "max": 6.35
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Pressure",
+                "dataType": "FLOAT",
+                "unit": "bar",
+                "min": 0.0,
+                "max": 6.35
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Pressure",
+                "dataType": "FLOAT",
+                "unit": "bar",
+                "min": 0.0,
+                "max": 6.35
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Temperature",
+                "dataType": "UINT8",
+                "unit": "C",
+                "min": -40.0,
+                "max": 214.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Temperature",
+                "dataType": "UINT8",
+                "unit": "C",
+                "min": -40.0,
+                "max": 214.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Temperature",
+                "dataType": "UINT8",
+                "unit": "C",
+                "min": -40.0,
+                "max": 214.0
+            }
+        },
+        {
+            "sensor": {
+                "fullyQualifiedName": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Temperature",
+                "dataType": "UINT8",
+                "unit": "C",
+                "min": -40.0,
+                "max": 214.0
+            }
+        }
+    ]
+}
