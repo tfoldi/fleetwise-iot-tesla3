@@ -1,0 +1,99 @@
+{
+    "postTriggerCollectionDuration": 0,
+    "diagnosticsMode": "OFF",
+    "spoolingMode": "OFF",
+    "compression": "SNAPPY",
+    "priority": 0,
+    "signalsToCollect": [
+        {
+            "name": "Vehicle.Speed"
+        },
+        {
+            "name": "Vehicle.TraveledDistance"
+        },
+        {
+            "name": "Vehicle.Battery.CurrentCurrent"
+        },
+        {
+            "name": "Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy"
+        },
+        {
+            "name": "Vehicle.Powertrain.AccumulatedBrakingEnergy"
+        },
+        {
+            "name": "Vehicle.Battery.CurrentVoltage"
+        },
+        {
+            "name": "Vehicle.Powertrain.Range"
+        },
+        {
+            "name": "Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed"
+        },
+        {
+            "name": "Vehicle.Chassis.SteeringWheel.Angle"
+        },
+        {
+            "name": "Vehicle.Chassis.SteeringWheel.Speed"
+        },
+        {
+            "name": "Vehicle.Chassis.Accelerator.PedalPosition"
+        },
+        {
+            "name": "Vehicle.Chassis.Brake.PedalStatus"
+        },
+        {
+            "name": "Vehicle.Powertrain.EOP"
+        },
+        {
+            "name": "Vehicle.Powertrain.EOPExpected"
+        },
+        {
+            "name": "Vehicle.CurrentLocation.Accuracy"
+        },
+        {
+            "name": "Vehicle.CurrentLocation.Latitude"
+        },
+        {
+            "name": "Vehicle.CurrentLocation.Longitude"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Pressure"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Pressure"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Pressure"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Pressure"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row1.Wheel.Left.Tire.Temperature"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row1.Wheel.Right.Tire.Temperature"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row2.Wheel.Left.Tire.Temperature"
+        },
+        {
+            "name": "Vehicle.Chassis.Axle.Row2.Wheel.Right.Tire.Temperature"
+        }
+    ],
+    "collectionScheme": {
+        "timeBasedCollectionScheme": {
+            "periodMs": 60000
+        }
+    },
+    "dataDestinationConfigs": [
+        {
+            "s3Config": {
+                "bucketArn": "arn:aws:s3:::veder-redev",
+                "dataFormat": "JSON",
+                "storageCompressionFormat": "GZIP",
+                "prefix": "camp1"
+            }
+        }
+    ]
+}
