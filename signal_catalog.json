@@ -121,18 +121,14 @@
             "sensor": {
                 "fullyQualifiedName": "Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy",
                 "dataType": "FLOAT",
-                "unit": "KWh",
-                "min": 0.0,
-                "max": 0.0
+                "unit": "KWh"
             }
         },
         {
             "sensor": {
                 "fullyQualifiedName": "Vehicle.Powertrain.AccumulatedBrakingEnergy",
                 "dataType": "FLOAT",
-                "unit": "KWh",
-                "min": 0.0,
-                "max": 0.0
+                "unit": "KWh"
             }
         },
         {
@@ -204,7 +200,7 @@
                 "dataType": "BOOLEAN",
                 "unit": "",
                 "min": 0.0,
-                "max": 2.0
+                "max": 3.0
             }
         },
         {

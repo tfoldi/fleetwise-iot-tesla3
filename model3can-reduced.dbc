@@ -40,7 +40,10 @@ BO_ 297 ID129SteeringAngle: 8 VehicleBus
  SG_ SteeringAngle129 : 16|14@1+ (0.1,-819.2) [-819.2|819.1] "Deg"  Receiver
 
 BO_ 950 ID3B6odometer: 4 VehicleBus
- SG_ UI_odometer : 0|24@1+ (0.1,0) [0|1677720] "km"  Receiver
+ SG_ Odometer3B6 : 0|32@1+ (0.001,0) [0|4294970] "km"  Receiver
+
+BO_ 1011 UI_odometer : 3 CH
+ SG_ UI_odometer: 0|24@1+ (0.1,0) [0|0] "km"
 
 BO_ 306 ID132HVBattAmpVolt: 8 VehicleBus
  SG_ BattVoltage132 : 0|16@1+ (0.01,0) [0|655.35] "V"  Receiver

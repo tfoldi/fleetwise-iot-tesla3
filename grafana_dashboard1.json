@@ -1,0 +1,1086 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 2,
+  "id": 15,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<img src=\"https://i.piano.io/managedservices/the-brussels-times/tesla-picture.png\">\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.3.1",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 500,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "yellow",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "lengthkm",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 4,
+        "y": 0
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Powertrain.Range",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double)  FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\norder by bin(time,$__interval) asc",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "Range",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "yellow",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 20
+              }
+            ]
+          },
+          "unit": "percent",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 6,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::bigint)  FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\norder by bin(time,$__interval) asc",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "SoC",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 1,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 8,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": true
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Powertrain.TractionBattery.StateOfCharge.Displayed",
+          "rawQuery": "SELECT \nmax(measure_value::bigint)  \n- min(measure_value::bigint) \nFROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\n\n",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "SoC (used)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 200,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 130
+              }
+            ]
+          },
+          "unit": "velocitykmh",
+          "unitScale": true
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 2,
+        "x": 10,
+        "y": 0
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Speed",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, \nbin(time,$__interval), max(measure_value::double)  FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\norder by bin(time,$__interval) asc",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "Speed (Current)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "decimals": 2,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 130
+              }
+            ]
+          },
+          "unit": "kwatth",
+          "unitScale": false
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "sum"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Powertrain.TractionBattery.AccumulatedChargedEnergy",
+          "rawQuery": "SELECT vehicleName, campaignName, \n\nbin(time,$__interval),\n/*\nmax(\n  case when measure_name ='Vehicle.Battery.CurrentCurrent' then\n  measure_value::double\n  end\n) *\nmax(\n  case when measure_name ='Vehicle.Battery.CurrentVoltage' then\n  measure_value::double\n  end\n)   * 100/ 1000 kwh_per_100km,\n*/\nmax(\n  case when measure_name ='Vehicle.Battery.CurrentCurrent' then\n  measure_value::double\n  end\n) *\nmax(\n  case when measure_name ='Vehicle.Battery.CurrentVoltage' then\n  measure_value::double\n  end\n) * to_milliseconds( $__interval) / 1000 / 3600 / 1000 kWh\n FROM $__database.$__table \nwhere measure_name in ( 'Vehicle.Battery.CurrentCurrent' ,'Vehicle.Battery.CurrentVoltage')\nand $__timeFilter\t\ngroup by 1,2,3\norder by bin(time,$__interval) asc",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "kWh Used",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "blue",
+            "mode": "fixed"
+          },
+          "mappings": [],
+          "min": 41,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "yellow",
+                "value": 130
+              }
+            ]
+          },
+          "unit": "lengthkm",
+          "unitScale": false
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 0
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "mean"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showPercentChange": false,
+        "textMode": "auto",
+        "wideLayout": true
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.TraveledDistance",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, \nbin(time,$__interval), max(measure_value::double)  FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "Odometry",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 0
+      },
+      "id": 12,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<br/><br/><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/HCLTech-new-logo.svg/306px-HCLTech-new-logo.svg.png?20220926142743\">\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.3.1",
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 2,
+            "pointSize": 6,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "Speed (km/h)",
+          "mappings": [],
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "yellow",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "velocitykmh",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "pedal_pos"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              },
+              {
+                "id": "min",
+                "value": 0
+              },
+              {
+                "id": "max",
+                "value": 100
+              },
+              {
+                "id": "displayName",
+                "value": "Accel Pedal Position (%)"
+              },
+              {
+                "id": "custom.lineStyle",
+                "value": {
+                  "dash": [
+                    0,
+                    10
+                  ],
+                  "fill": "dot"
+                }
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "purple",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "speed"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "orange",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 0,
+        "y": 4
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Speed",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double) speed FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        },
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "hide": false,
+          "measure": "Vehicle.Chassis.Accelerator.PedalPosition",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double) pedal_pos  FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "B",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "Average Speed",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "fixed"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "decimals": 15,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unitScale": false
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 12,
+        "x": 12,
+        "y": 4
+      },
+      "id": 4,
+      "maxDataPoints": 500,
+      "options": {
+        "basemap": {
+          "config": {
+            "showLabels": true,
+            "theme": "auto"
+          },
+          "name": "Layer 0",
+          "type": "carto"
+        },
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": false,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 2,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "GPS Location",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "fit",
+          "lastOnly": false,
+          "lat": 47.636656,
+          "layer": "GPS Location",
+          "lon": 19.157373,
+          "zoom": 15
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.CurrentLocation.Latitude",
+          "rawQuery": "SELECT vehicleName, campaignName, \nbin(time,$__interval), \navg(case when measure_name = 'Vehicle.CurrentLocation.Latitude' then \nmeasure_value::double\nend) latitude,\navg(case when measure_name = 'Vehicle.CurrentLocation.Longitude' then \nmeasure_value::double\nend) Longitude\n\nFROM \"ts-tesla3\".VehicleDataTable\nwhere measure_name like 'Vehicle.CurrentLocation.L%'\nand $__timeFilter\t\ngroup by 1,2,3\n\n order by 4 desc  \n ",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "type": "geomap"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "Wheel Angle (degrees)",
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "yellow",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "degree",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "speed"
+            },
+            "properties": [
+              {
+                "id": "unitScale",
+                "value": true
+              },
+              {
+                "id": "unit",
+                "value": "rotdegs"
+              },
+              {
+                "id": "displayName",
+                "value": "Wheel Speed (degrees per second)"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 11,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Chassis.SteeringWheel.Angle",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double) angle FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        },
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "hide": false,
+          "measure": "Vehicle.Chassis.SteeringWheel.Speed",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double) speed  FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "B",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "Wheel Angle and Speed",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "grafana-timestream-datasource",
+        "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "red",
+            "mode": "fixed"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "displayName": "EOP (kPa)",
+          "fieldMinMax": false,
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              }
+            ]
+          },
+          "unit": "pressurekpa",
+          "unitScale": true
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "EOP_expected"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "EOP Expected (kPA)"
+              },
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 13,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.3.1",
+      "targets": [
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "measure": "Vehicle.Powertrain.EOP",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double) EOP FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "A",
+          "table": "\"VehicleDataTable\""
+        },
+        {
+          "database": "\"ts-tesla3\"",
+          "datasource": {
+            "type": "grafana-timestream-datasource",
+            "uid": "bc321d9a-07fd-4cc1-96ad-8421ed21b553"
+          },
+          "hide": false,
+          "measure": "Vehicle.Powertrain.EOPExpected",
+          "rawQuery": "SELECT vehicleName, campaignName, measure_name, bin(time,$__interval), max(measure_value::double) EOP_expected FROM $__database.$__table \nwhere measure_name = '$__measure'\nand $__timeFilter\t\ngroup by 1,2,3, 4\n",
+          "refId": "B",
+          "table": "\"VehicleDataTable\""
+        }
+      ],
+      "title": "EOP (actual and expected)",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-15m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "IoT FleetWise - Tesla3",
+  "uid": "b8a8519e-d97f-4135-bae2-0069b20dd518",
+  "version": 26,
+  "weekStart": ""
+}

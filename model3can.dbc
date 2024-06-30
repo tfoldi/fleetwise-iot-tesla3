@@ -2746,8 +2746,8 @@ BO_ 789 ID315RearInverterTemps: 8 VehicleBus
 BO_ 340 ID154RearTorqueOld: 8 VehicleBus
  SG_ RAWTorqueRear154 : 40|12@1- (0.25,0) [-512|511.75] "NM"  Receiver
 
-BO_ 950 ID3B6odometer: 4 VehicleBus
- SG_ Odometer3B6 : 0|32@1+ (0.001,0) [0|4294970] "KM"  Receiver
+BO_ 1011 ID3F3UI_odo: 3 ChassisBus
+ SG_ UI_odometer : 0|24@1+ (0.1,0) [0|1677720] "km"  Receiver
 
 BO_ 614 ID266RearInverterPower: 8 VehicleBus
  SG_ RearHeatPowerMax266 : 24|8@1+ (0.08,0) [0|20] "kW"  Receiver

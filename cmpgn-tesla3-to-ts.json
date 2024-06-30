@@ -83,16 +83,14 @@
     ],
     "collectionScheme": {
         "timeBasedCollectionScheme": {
-            "periodMs": 60000
+            "periodMs": 10000
         }
     },
     "dataDestinationConfigs": [
         {
-            "s3Config": {
-                "bucketArn": "arn:aws:s3:::veder-redev",
-                "dataFormat": "JSON",
-                "storageCompressionFormat": "GZIP",
-                "prefix": "camp1"
+            "timestreamConfig": {
+                "timestreamTableArn": "arn:aws:timestream:us-east-1:767397944050:database/ts-tesla3/table/VehicleDataTable",
+                "executionRoleArn": "arn:aws:iam::767397944050:role/IoTFleetWiseServiceRole"
             }
         }
     ]
